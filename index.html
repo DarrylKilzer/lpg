@@ -1,12 +1,51 @@
 <html>
+
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
 	<title>Slap Object Game</title>
-	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="">
-	
+	<link rel="stylesheet" href="game.css">
+
 </head>
+
 <body>
-	
-	<script src=""></script>
+	<div class="text-center">
+		<img id="img" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQxJCqBhpsHR4hz14DVaYg3eJUXj7vHuZD-Urna-aXzkhSfq5M" class="center" width="300px" height="300px" alt="">
+		<div class="fixed">
+		<br>
+		<span>Health:<span id="health">--</span></span>
+		<br>
+		<span>Name:<span id="name">--</span></span>
+		<br>
+		<span>Hits:<span id="hits">--</span></span>
+		<br>
+		<button class="button btn-default" onclick="slap()">Slap</button>
+		<button class="button btn-default" onclick="punch()">Punch</button>
+		<button class="button btn-default" onclick="special()">Special</button>
+		<button class="button btn-default" onclick="reset()">Reset</button>
+</div>	
+	</div>
+	<!--<div id="container">
+		<h1 class="text-center" id="characterStatus">Select an attack and Defense!</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="player-area">
+					<button type="button btn-default" onclick="startRound()">Battle!</button>
+					<button type="button button-default" onclick="playerSelectAttack('punch')">Punch!</button>
+					<button type="button button-default" onclick="playerSelectAttack('kick')">Kick!</button>
+					<button type="button button-default" onclick="playerSelectAttack('combo')">Combo!</button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="enemy-area">
+					<button type="button button-default" onclick="playerSelectDefense('blockPunch')">Defend a punch!</button>
+					<button type="button button-default" onclick="playerSelectDefense('blockKick')">Defend a kick!</button>
+					<button type="button button-default" onclick="playerSelectDefense(blockCombo)">Defend a combo!</button>
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<script src="game.js"></script>
 </body>
+
 </html>

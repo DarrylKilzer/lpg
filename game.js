@@ -67,6 +67,7 @@ update();
 function update(){
   if(health <= 0){
     health = 0;
+    document.getElementById("img").src ="https://media3.giphy.com/media/WlKlOHTBxmAyQ/200.webp#81-grid1";
   }
   document.getElementById("health").innerHTML = health;
   document.getElementById("name").innerHTML = name;
@@ -80,16 +81,16 @@ function reset(){
 }
 
 function returnImage(){
-  document.getElementById("img").src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQxJCqBhpsHR4hz14DVaYg3eJUXj7vHuZD-Urna-aXzkhSfq5M"
+  document.getElementById("img").src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQxJCqBhpsHR4hz14DVaYg3eJUXj7vHuZD-Urna-aXzkhSfq5M";
 }
 function slapImage(){
-  document.getElementById("img").src="https://media3.giphy.com/media/UHLtCLwRsbDFK/200.webp#2-grid1"
+  document.getElementById("img").src="https://media3.giphy.com/media/UHLtCLwRsbDFK/200.webp#2-grid1";
 }
 function punchImage(){
-  document.getElementById("img").src="https://media0.giphy.com/media/XzD71I16QPnuU/200.webp#4-grid1"
+  document.getElementById("img").src="https://media0.giphy.com/media/XzD71I16QPnuU/200.webp#4-grid1";
 }
 function specialImage(){
-  document.getElementById("img").src="https://media4.giphy.com/media/DE9UvYPmmUf0A/200.webp#41-grid1"
+  document.getElementById("img").src="https://media4.giphy.com/media/DE9UvYPmmUf0A/200.webp#41-grid1";
 }
 
 update();

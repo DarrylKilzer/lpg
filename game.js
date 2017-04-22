@@ -93,8 +93,6 @@ function specialImage(){
   document.getElementById("img").src="https://media4.giphy.com/media/DE9UvYPmmUf0A/200.webp#41-grid1";
 }
 
-update();
-
 
 
 

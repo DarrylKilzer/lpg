@@ -44,7 +44,7 @@ function slap(){
 health--;
 hits++;
 slapImage();
-setTimeout(function(){returnImage()},100);
+setTimeout(function(){returnImage()},1000);
 update();
 }
 

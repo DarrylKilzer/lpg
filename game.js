@@ -81,19 +81,19 @@ function reset() {
 }
 
 function returnImage() {
-  document.getElementById("img").src = "assets/returnImage.jpg";
+  document.getElementById("img").src = "https://cloud.githubusercontent.com/assets/13141320/25314450/4e7847f8-2801-11e7-85fa-8778dccc3bdb.jpg";
 }
 function slapImage() {
-  document.getElementById("img").src = "assets/slap.gif";
+  document.getElementById("img").src = "https://cloud.githubusercontent.com/assets/13141320/25314452/4e8b41be-2801-11e7-93b8-2b9723b73f5f.gif";
 }
 function punchImage() {
-  document.getElementById("img").src = "assets/punch.gif";
+  document.getElementById("img").src = "https://cloud.githubusercontent.com/assets/13141320/25314449/4e5f32b8-2801-11e7-8e2f-a949fe035bf9.gif";
 }
 function specialImage() {
-  document.getElementById("img").src = "assets/special.gif";
+  document.getElementById("img").src = "https://cloud.githubusercontent.com/assets/13141320/25314451/4e89c7b2-2801-11e7-980a-0b11d1975bd9.gif";
 }
 function deadImage(){
-  document.getElementById("img").src = "assets/dead.gif";
+  document.getElementById("img").src = "https://cloud.githubusercontent.com/assets/13141320/25314446/47c68e1a-2801-11e7-9411-f0509814c713.gif";
 }
 
 update();

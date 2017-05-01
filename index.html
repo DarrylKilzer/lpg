@@ -3,48 +3,37 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	 crossorigin="anonymous">
-	<title>Slap Object Game</title>
-	<link rel="stylesheet" href="game.css">
+	<title>Slap Joffrey</title>
+	<link rel="stylesheet" href="game.min.css">
 
 </head>
 
 <body>
 	<div class="text-center">
-		<img id="img" src="https://cloud.githubusercontent.com/assets/13141320/25314450/4e7847f8-2801-11e7-85fa-8778dccc3bdb.jpg" class="center" width="300px" height="300px" alt="">
+		<img id="img" src="https://cloud.githubusercontent.com/assets/13141320/25314450/4e7847f8-2801-11e7-85fa-8778dccc3bdb.jpg"
+		 class="center" width="300px" height="300px" alt="">
 		<div class="fixed">
-		<br>
-		<span>Health:<span id="health">--</span></span>
-		<br>
-		<span>Name:<span id="name">--</span></span>
-		<br>
-		<span>Hits:<span id="hits">--</span></span>
-		<br>
-		<button class="button btn-default" onclick="slap()">Slap</button>
-		<button class="button btn-default" onclick="punch()">Punch</button>
-		<button class="button btn-default" onclick="special()">Special</button>
-		<button class="button btn-default" onclick="reset()">Reset</button>
-</div>	
-	</div>
-	<!--<div id="container">
-		<h1 class="text-center" id="characterStatus">Select an attack and Defense!</h1>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="player-area">
-					<button type="button btn-default" onclick="startRound()">Battle!</button>
-					<button type="button button-default" onclick="playerSelectAttack('punch')">Punch!</button>
-					<button type="button button-default" onclick="playerSelectAttack('kick')">Kick!</button>
-					<button type="button button-default" onclick="playerSelectAttack('combo')">Combo!</button>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="enemy-area">
-					<button type="button button-default" onclick="playerSelectDefense('blockPunch')">Defend a punch!</button>
-					<button type="button button-default" onclick="playerSelectDefense('blockKick')">Defend a kick!</button>
-					<button type="button button-default" onclick="playerSelectDefense(blockCombo)">Defend a combo!</button>
-				</div>
-			</div>
+			<br>
+			<span>Name:<span id="name">--</span></span>
+			<br>
+			<span>Has <span id="targetItem">--</span></span>
+			<br>
+			<span>Health:<span id="health">--</span></span>
+			<br>
+			<span>Hits:<span id="hits">--</span></span>
+			<br>
+			<button class="button btn-default" onclick="app.controllers.gameController.slap('Joffrey', 'Player')">Slap</button>
+			<button class="button btn-default" onclick="app.controllers.gameController.punch('Joffrey', 'Player')">Punch</button>
+			<button class="button btn-default" onclick="app.controllers.gameController.special('Joffrey', 'Player')">Special</button>
+			<button class="button btn-default" onclick="app.controllers.gameController.reset('Joffrey', 'Player')">Reset</button>
+			<br>
+			<span>Player Health:<span id="playerHealth">--</span></span>
+				<br>
+			<span>You Have <span id="playerItem">--</span></span>
 		</div>
-	</div>-->
+	</div>
+	<script src="GameServices.js"></script>
+	<script src="GameController.js"></script>
 	<script src="game.js"></script>
 </body>
 

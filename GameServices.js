@@ -88,15 +88,14 @@ function GameService() {
   this.determineItem = function determineItem(target) {
     var itemType = getRandomIntInclusive(0, 3);
     if (itemType == 0) {
-     target.item = new Item("nothing", getRandomIntInclusive(0, 10), getRandomIntInclusive(0, 5), getRandomIntInclusive(0, 15)
-      );
+     target.item = new Item("nothing", 0, 0, 0);
     } else if (itemType == 1) {
-      target.item = new Item("Armor on", getRandomIntInclusive(0, 10), getRandomIntInclusive(0, 5), getRandomIntInclusive(0, 15));
+      target.item = new Item("Armor on", getRandomIntInclusive(0, 10), 0, getRandomIntInclusive(0, 15));
     } else if (itemType == 2) {
-      target.item = new Item("a Sword", getRandomIntInclusive(0, 5), getRandomIntInclusive(0, 15), getRandomIntInclusive(0, 10)
+      target.item = new Item("a Sword", 0, getRandomIntInclusive(0, 15), getRandomIntInclusive(0, 5)
       );
     }else if(itemType == 3) {
-      target.item = new Item("a Shield", getRandomIntInclusive(0, 15), getRandomIntInclusive(0, 5), getRandomIntInclusive(0, 10));
+      target.item = new Item("a Shield", getRandomIntInclusive(0, 5), 0, getRandomIntInclusive(0, 10));
     }
   }
 
@@ -117,5 +116,9 @@ function GameService() {
       player.health - ((target.item.attack - player.item.defense) 
       + getRandomIntInclusive(player.special/2, player.special));
     }
+  }
+
+  this.win = function win(){
+    
   }
 }

@@ -3,22 +3,28 @@ function GameController() {
   //private
 
   var gameService = new GameService();
-  
+
 
   function update() {
     var target = gameService.getTarget("Joffrey");
     var player = gameService.getPlayer("Player");
-    
+
     gameService.determineItem(target);
     gameService.determineItem(player);
     if (target.health <= 0) {
       target.health = 0;
       deadImage();
-    }else if(player.health <= 0) {
+    } else if (player.health <= 0) {
       player.health = 0;
     }
+
+    var gameState = "Battle for the Iron Throne!";
+    var slapButton = document.getElementById("slapButton");
+    var punchButton = document.getElementById("punchButton");
+    var specialButton = document.getElementById("specialButton");
     var playerHealth = document.getElementById("playerHealth").innerHTML = player.health;
     var playerItem = document.getElementById("playerItem").innerHTML = player.item.name;
+    var gameStatus = document.getElementById("gameStatus").innerHTML = gameState;
     var targetName = document.getElementById("name").innerHTML = target.name;
     var targetItem = document.getElementById("targetItem").innerHTML = target.item.name;
     var targetHealth = document.getElementById("health").innerHTML = target.health;
@@ -64,7 +70,7 @@ function GameController() {
     update();
   }
 
-  this.special = function special(target, player){
+  this.special = function special(target, player) {
     var target = gameService.getTarget("Joffrey");
     var player = gameService.getPlayer("Player");
     gameService.specialAttack(target);
@@ -79,6 +85,7 @@ function GameController() {
     var player = gameService.getPlayer("Player");
     gameService.resetGame(target, player);
     gameService.enemyAttack(target, player);
+    gameState = "Battle!";
     update();
   }
 }

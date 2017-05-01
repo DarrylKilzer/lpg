@@ -22,14 +22,16 @@
 			<br>
 			<span>Hits:<span id="hits">--</span></span>
 			<br>
-			<button class="button btn-default" onclick="app.controllers.gameController.slap('Joffrey', 'Player')">Slap</button>
-			<button class="button btn-default" onclick="app.controllers.gameController.punch('Joffrey', 'Player')">Punch</button>
-			<button class="button btn-default" onclick="app.controllers.gameController.special('Joffrey', 'Player')">Special</button>
+			<button class="button btn-default" id="slapButton" onclick="app.controllers.gameController.slap('Joffrey', 'Player')">Slap</button>
+			<button class="button btn-default" id="punchButton" onclick="app.controllers.gameController.punch('Joffrey', 'Player')">Punch</button>
+			<button class="button btn-default" id="specialButton" onclick="app.controllers.gameController.special('Joffrey', 'Player')">Special</button>
 			<button class="button btn-default" onclick="app.controllers.gameController.reset('Joffrey', 'Player')">Reset</button>
 			<br>
 			<span>Player Health:<span id="playerHealth">--</span></span>
 				<br>
 			<span>You Have <span id="playerItem">--</span></span>
+			<br>
+			<span><span><h1 id="gameStatus"></h1></span></span>
 		</div>
 	</div>
 	<script src="GameServices.js"></script>

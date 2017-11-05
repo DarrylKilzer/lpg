@@ -12,7 +12,7 @@ function GameService() {
     this.item = item;
   }
 
-  function Player(name, health, hits, slap, punch, special, item) {
+  function MakePlayer(name, health, hits, slap, punch, special, item) {
     this.name = name;
     this.health = health;
     this.hits = hits;
@@ -23,7 +23,7 @@ function GameService() {
   }
 
   var Joffrey = new Target("Joffrey", 100, 0, 1, 10, 15);
-  var Player = new Player("Player", 100, 0, 1, 10, 15);
+  var Player = new MakePlayer("Player", 100, 0, 1, 10, 15);
   var targets = [Joffrey];
   var players = [Player];
 
@@ -60,27 +60,31 @@ function GameService() {
     }
   }
 
-  this.slapAttack = function slapAttack(target) {
+  this.slapAttack = function slapAttack(target, player) {
     target.health += target.item.health;
-    target.health = target.health + target.item.defense - target.slap;
+    target.health = target.health - ((player.item.attack - target.item.defense) 
+      + getRandomIntInclusive(player.slap/2, player.slap));
     target.hits++;
     return (target);
   }
 
-  this.punchAttack = function punchAttack(target) {
-    target.health = target.health - target.punch;
+  this.punchAttack = function punchAttack(target, player) {
+    target.health = target.health - ((player.item.attack - target.item.defense) 
+      + getRandomIntInclusive(player.punch/2, player.punch));
     target.hits++;
     return (target);
   }
 
-  this.specialAttack = function specialAttack(target) {
-    target.health = target.health - target.special;
+  this.specialAttack = function specialAttack(target, player) {
+    target.health = target.health - ((player.item.attack - target.item.defense) 
+      + getRandomIntInclusive(player.special/2, player.special));
     target.hits++;
     return (target);
   }
 
   this.resetGame = function resetGame(target, player) {
     target.health = 100;
+    player.health = 100;
     target.hits = 0;
     return (target, player);
   }
@@ -106,19 +110,28 @@ function GameService() {
     }else if(attackType == 1){
       player.health = 
       player.health - ((target.item.attack - player.item.defense) 
-      + getRandomIntInclusive(player.slap/2, player.slap));
+      + getRandomIntInclusive(target.slap/2, target.slap));
     }else if (attackType == 2){
       player.health = 
       player.health - ((target.item.attack - player.item.defense) 
-      + getRandomIntInclusive(player.punch/2, player.punch));
+      + getRandomIntInclusive(target.punch/2, target.punch));
     }else if(attackType == 3){
       player.health = 
       player.health - ((target.item.attack - player.item.defense) 
-      + getRandomIntInclusive(player.special/2, player.special));
+      + getRandomIntInclusive(target.special/2, target.special));
     }
   }
 
-  this.win = function win(){
-    
+  this.getItem = function getItem(player, itemType){
+    if (itemType == 0) {
+     player.item = new Item("nothing", 0, 0, 0);
+    } else if (itemType == 1) {
+      player.item = new Item("Armor on", getRandomIntInclusive(0, 10), 0, getRandomIntInclusive(0, 15));
+    } else if (itemType == 2) {
+      player.item = new Item("a Sword", 0, getRandomIntInclusive(0, 15), getRandomIntInclusive(0, 5)
+      );
+    }else if(itemType == 3) {
+      player.item = new Item("a Shield", getRandomIntInclusive(0, 5), 0, getRandomIntInclusive(0, 10));
+    }
   }
 }

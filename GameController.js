@@ -11,6 +11,7 @@ function GameController() {
 
     gameService.determineItem(target);
     gameService.determineItem(player);
+    
     if (target.health <= 0) {
       target.health = 0;
       deadImage();

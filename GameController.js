@@ -54,7 +54,7 @@ function GameController() {
   this.slap = function slap(target, player) {
     var target = gameService.getTarget("Joffrey");
     var player = gameService.getPlayer("Player");
-    gameService.slapAttack(target);
+    gameService.slapAttack(target, player);
     gameService.enemyAttack(target, player);
     slapImage();
     setTimeout(function () { returnImage() }, 1100);
@@ -64,7 +64,7 @@ function GameController() {
   this.punch = function punch(target, player) {
     var target = gameService.getTarget("Joffrey");
     var player = gameService.getPlayer("Player");
-    gameService.punchAttack(target);
+    gameService.punchAttack(target, player);
     gameService.enemyAttack(target, player);
     punchImage();
     setTimeout(function () { returnImage() }, 1200);
@@ -74,7 +74,7 @@ function GameController() {
   this.special = function special(target, player) {
     var target = gameService.getTarget("Joffrey");
     var player = gameService.getPlayer("Player");
-    gameService.specialAttack(target);
+    gameService.specialAttack(target, player);
     gameService.enemyAttack(target, player);
     specialImage();
     setTimeout(function () { returnImage() }, 5000);
